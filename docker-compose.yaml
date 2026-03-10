@@ -2,7 +2,7 @@ services:
   backend:
     build:
       dockerfile: Dockerfile
-      context: backend
+      context: ./backend
     container_name: backend
     hostname: backend
     restart: always
