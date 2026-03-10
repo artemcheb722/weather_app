@@ -1,0 +1,20 @@
+services:
+  backend:
+    build:
+      dockerfile: Dockerfile
+      context: ./backend
+    container_name: backend
+    hostname: backend
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    networks:
+      - main_network
+
+networks:
+  main_network:
+    driver: bridge
