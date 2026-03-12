@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+
 from .app_factory import get_application
 
 app = get_application()
@@ -11,12 +12,7 @@ async def index():
 
 @app.get("/weather")
 async def get_weather():
-    return {
-        "city": "Kyiv",
-        "temperature": 21,
-        "status": "sunny"
-    }
+    return {"city": "Kyiv", "temperature": 21, "status": "sunny"}
 
 
 app.root_path = "/api"
-
