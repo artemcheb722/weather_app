@@ -5,6 +5,6 @@
 
 
 # Docker
-> make up (docker compose build)
-> make down (docker compose down)
+> make up (docker compose build)\
+> make down (docker compose down)\
 > make build (docker compose build)
