@@ -28,6 +28,26 @@ services:
     depends_on:
       - backend
 
+  frontend:
+    build:
+      dockerfile: Dockerfile
+      context: frontend
+    container_name: frontend
+    hostname: frontend
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/app:/app
+    networks:
+      - main_network
+    command: |
+      sh -c "
+      uvicorn main:app --port=3000 --host=0.0.0.0 --reload
+      "
+
 networks:
   main_network:
     driver: bridge
