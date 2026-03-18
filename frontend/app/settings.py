@@ -5,6 +5,7 @@ from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     BACKEND_START: str
+    DEBUG: bool = False
 
 
 @lru_cache()

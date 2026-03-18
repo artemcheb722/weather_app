@@ -1,6 +1,5 @@
 import httpx
-
-from .settings import settings
+from settings import settings
 
 
 async def get_weather(city: str):
